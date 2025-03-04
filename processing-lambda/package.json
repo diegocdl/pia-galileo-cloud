@@ -1,0 +1,17 @@
+{
+  "name": "image-processing-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function to process images using AWS Rekognition",
+  "main": "src/handler.js",
+  "scripts": {
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/client-rekognition": "^3.0.0",
+    "@smithy/config-resolver": "^4.0.1"
+  },
+  "devDependencies": {
+    "serverless": "^3.0.0"
+  }
+}

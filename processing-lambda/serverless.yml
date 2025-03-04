@@ -1,0 +1,30 @@
+service: image-processing-service
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-west-2
+  architecture: arm64
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - s3:GetObject
+            - rekognition:DetectLabels
+            - dynamodb:PutItem
+          Resource: 
+            - arn:aws:s3:::imagenes-a-procesar-pia/*
+            - arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/image-analysis-results
+            - "*"  # For Rekognition
+
+functions:
+  processImage:
+    handler: src/handler.processImage
+    events:
+      - s3:
+          bucket: imagenes-a-procesar-pia
+          event: s3:ObjectCreated:*
+          existing: true 
