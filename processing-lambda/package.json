@@ -12,6 +12,6 @@
     "@smithy/config-resolver": "^4.0.1"
   },
   "devDependencies": {
-    "serverless": "^3.0.0"
+    "serverless": "^4.23.0"
   }
 }
