@@ -9,7 +9,7 @@
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.0.0",
     "@aws-sdk/client-rekognition": "^3.0.0",
-    "@smithy/config-resolver": "^4.0.1"
+    "@smithy/config-resolver": "^4.4.5"
   },
   "devDependencies": {
     "serverless": "^3.0.0"
